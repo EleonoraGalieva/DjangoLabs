@@ -1,0 +1,14 @@
+For:
+{{ name }}
+At:
+{{ email }}
+
+Please verify your account by clicking this link:
+
+
+{{ text }}
+
+
+Thank you for choosing our website!
+
+{{ time }}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{type_of_article}}{% endblock %}
+{% block content %}
+{% if latest_articles_list %}
+
+<div class="card-deck" style="width:80% ;margin: 40px">
+    {% for i in latest_articles_list %}
+    <div class="card" >
+        <img class="card-img-top" src="{{i.article_pic.url}}" alt="Card image cap">
+        <div class="card-body">
+           <strong> <a href="{% url 'articles:article' i.id %}" class="card-link" style="color:black;">{{i.article_title}}</a></strong>
+            <p class="card-text">Learn more about the topic...</p>
+            <p class="card-text"><small class="text-muted">{{i.pub_date}}</small></p>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+{% else %}
+No such news, sorry ...
+{% endif %}
+{% endblock %}

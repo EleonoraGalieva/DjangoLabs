@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Home</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="'img/core-img/favicon.ico'">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Header Area Start -->
+<header class="header-area">
+    <div class="top-header">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Breaking News Area -->
+                <div class="col-12 col-md-6">
+                    <div class="breaking-news-area">
+                        <h5 class="breaking-news-title">Breaking news</h5>
+                        <div id="breakingNewsTicker" class="ticker">
+                            <ul>
+                                <li><a href="{% url 'articles:article' latest_article_1.id%}">{{latest_article_1.article_title}}</a>
+                                </li>
+                                <li><a href="{% url 'articles:article' latest_article_2.id%}">{{latest_article_2.article_title}}</a>
+                                </li>
+                                <li><a href="{% url 'articles:article' latest_article_3.id%}">{{latest_article_3.article_title}}</a>
+                                </li>
+                                <li><a href="{% url 'articles:article' latest_article_4.id%}">{{latest_article_4.article_title}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stock News Area -->
+                <div class="col-12 col-md-6">
+                    <div class="stock-news-area">
+                        <div id="stockNewsTicker" class="ticker">
+                            <ul>
+                                <li>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>eur/usd</span>
+                                            <span>1.1862</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>0.18</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>BTC/usd</span>
+                                            <span>15.674.99</span>
+                                        </div>
+                                        <div class="stock-index plus-index">
+                                            <h4>8.60</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>ETH/usd</span>
+                                            <span>674.99</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>13.60</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>eur/usd</span>
+                                            <span>1.1862</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>0.18</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>BTC/usd</span>
+                                            <span>15.674.99</span>
+                                        </div>
+                                        <div class="stock-index plus-index">
+                                            <h4>8.60</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>ETH/usd</span>
+                                            <span>674.99</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>13.60</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>eur/usd</span>
+                                            <span>1.1862</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>3.95</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>BTC/usd</span>
+                                            <span>15.674.99</span>
+                                        </div>
+                                        <div class="stock-index plus-index">
+                                            <h4>4.78</h4>
+                                        </div>
+                                    </div>
+                                    <div class="single-stock-report">
+                                        <div class="stock-values">
+                                            <span>ETH/usd</span>
+                                            <span>674.99</span>
+                                        </div>
+                                        <div class="stock-index minus-index">
+                                            <h4>11.37</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Header Area -->
+    {% include 'navbar.html' %}
+</header>
+<!-- Header Area End -->
+
+<!-- Welcome Blog Slide Area Start -->
+<section class="welcome-blog-post-slide owl-carousel">
+    <!-- Single Blog Post -->
+    <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url(images/image.jpg);">
+        <!-- Single Blog Post Content -->
+        <div class="single-blog-post-content">
+            <div class="tags">
+                <a href="{% url 'articles:article' latest_article_1.id%}">{{latest_article_1.type}}</a>
+            </div>
+            <h3><a href="{% url 'articles:article' latest_article_1.id%}" class="font-pt">{{latest_article_1.article_title}}</a>
+            </h3>
+            <div class="date">
+                <a href="#">{{latest_article_1.pub_date}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Single Blog Post -->
+    <div class="single-blog-post-slide bg-img background-overlay-5"
+         style="background-image: url(images/_112037539_bannerhorizontal_2k-nc.png);">
+        <!-- Single Blog Post Content -->
+        <div class="single-blog-post-content">
+            <div class="tags">
+                <a href="{% url 'articles:article' latest_article_2.id%}">{{latest_article_2.type}}</a>
+            </div>
+            <h3><a href="{% url 'articles:article' latest_article_2.id%}" class="font-pt">{{latest_article_2.article_title}}</a>
+            </h3>
+            <div class="date">
+                <a href="#">{{latest_article_2.pub_date}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Single Blog Post -->
+    <div class="single-blog-post-slide bg-img background-overlay-5"
+         style="background-image: url(images/millie.jpg);">
+        <!-- Single Blog Post Content -->
+        <div class="single-blog-post-content">
+            <div class="tags">
+                <a href="{% url 'articles:article' latest_article_3.id%}">{{latest_article_3.type}}</a>
+            </div>
+            <h3><a href="{% url 'articles:article' latest_article_3.id%}" class="font-pt">{{latest_article_3.article_title}}</a>
+            </h3>
+            <div class="date">
+                <a href="#">{{latest_article_3.pub_date}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Single Blog Post -->
+    <div class="single-blog-post-slide bg-img background-overlay-5"
+         style="background-image: url(images/climate.jpg);">
+        <div class="single-blog-post-content">
+            <div class="tags">
+                <a href="{% url 'articles:article' latest_article_4.id%}">{{latest_article_4.type}}</a>
+            </div>
+            <h3><a href="{% url 'articles:article' latest_article_4.id%}" class="font-pt">{{latest_article_4.article_title}}</a>
+            </h3>
+            <div class="date">
+                <a href="#">{{latest_article_4.pub_date}}</a>
+            </div>
+        </div>
+</section>
+<!-- Welcome Blog Slide Area End -->
+<!-- Main Content Area Start -->
+<section class="main-content-wrapper section_padding_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                <!-- Gazette Welcome Post -->
+                <div class="gazette-welcome-post">
+                    <!-- Post Tag -->
+                    <div class="gazette-post-tag">
+                        <a href="#">{{latest_article_4.type}}</a>
+                    </div>
+                    <h2 class="font-pt">{{latest_article_4.article_title}}</h2>
+                    <p class="gazette-post-date">{{latest_article_4.pub_date}}</p>
+                    <!-- Post Thumbnail -->
+                    <div class="blog-post-thumbnail my-5">
+                        <img src="{{latest_article_4.article_pic.url}}" alt="post-thumb">
+                    </div>
+                    <!-- Post Excerpt -->
+                    <!-- Reading More -->
+                    <div class="post-continue-reading-share d-sm-flex align-items-center justify-content-between mt-30">
+                        <div class="post-continue-btn">
+                            <a href="{% url 'articles:article' latest_article_4.id%}" class="font-pt">Continue Reading <i class="fa fa-chevron-right"
+                                                                            aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gazette-todays-post section_padding_100_50">
+                    <div class="gazette-heading">
+                        <h4>today’s most popular</h4>
+                    </div>
+                    <!-- Single Today Post -->
+                    <div class="gazette-single-todays-post d-md-flex align-items-start mb-50">
+                        <div class="todays-post-thumb">
+                            <img src="{{latest_article_2.article_pic.url}}" alt="">
+                        </div>
+                        <div class="todays-post-content">
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">{{latest_article_2.type}}</a>
+                            </div>
+                            <h3><a href="{% url 'articles:article' latest_article_2.id%}" class="font-pt mb-2">{{latest_article_2.article_title}}</a></h3>
+                            <span class="gazette-post-date mb-2">{{latest_article_2.pub_date}}</span>
+                            <p>{{latest_article_2.article_text}}</p>
+                        </div>
+                    </div>
+
+                    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+                    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+                    <!-- Popper js -->
+                    <script src="{% static 'js/popper.min.js' %}"></script>
+                    <!-- Bootstrap js -->
+                    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+                    <!-- Plugins js -->
+                    <script src="{% static 'js/plugins.js' %}"></script>
+                    <!-- Active js -->
+                    <script src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>

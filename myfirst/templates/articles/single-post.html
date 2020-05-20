@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+ {% include 'navbar.html' %}
+<section class="single-post-area">
+    <!-- Single Post Title -->
+    <div class="single-post-title bg-img background-overlay" style="">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                    <div class="single-post-title-content">
+                        <!-- Post Tag -->
+                        <div class="gazette-post-tag">
+                            <a href="#">{{article.type}}</a>
+                        </div>
+                        <h2 class="font-pt">{{article.article_title}}</h2>
+                        <p>{{article.pub_date}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-post-contents">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="single-post-text">
+                        <p>{{article.article_text}}</p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="single-post-thumb">
+                        <img src="{{article.article_pic.url}}" alt="">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gazette-post-discussion-area section_padding_100 bg-gray">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <!-- Comment Area Start -->
+                <div class="comment_area section_padding_50 clearfix">
+                    <div class="gazette-heading">
+                        <h4 class="font-bold">Discussion</h4>
+                    </div>
+
+                    <ol>
+                        {% for i in comments_list %}
+                        <!-- Single Comment Area -->
+                        <li class="single_comment_area">
+                            <div class="comment-wrapper d-md-flex align-items-start">
+                                <!-- Comment Meta -->
+
+                                <div class="comment-author">
+                                    <img src="{{i.author_name.profile_pic.url}}" alt="">
+                                </div>
+                                <!-- Comment Content -->
+                                <div class="comment-content">
+                                    <h5>{{i.author_name.name}}</h5>
+                                    <p>{{i.comment_text}}</p>
+                                </div>
+
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+
+                <!-- Leave A Comment -->
+                <div class="leave-comment-area clearfix">
+                    <div class="comment-form">
+                        <div class="gazette-heading">
+                            <h4 class="font-bold">leave a comment</h4>
+                        </div>
+                        <!-- Comment Form -->
+                        <form action="{% url 'articles:leave_comment' article.id %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <textarea class="form-control" name="comment_text" id="message" cols="30" rows="10"
+                                          placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn leave-comment-btn">SUBMIT <i
+                                    class="fa fa-angle-right ml-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+<!-- Popper js -->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugins js -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- Active js -->
+<script src="{% static 'js/active.js' %}"></script>
+
+</body>
+
+</html>
