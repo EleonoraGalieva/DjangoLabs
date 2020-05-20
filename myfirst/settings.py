@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 SECRET_KEY = 'zuk3$x@f49=t7$e*!aug(lrtb1diglnm+1c^llgtm#dv(qb%ec'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mynewsappp.herokuapp.com', '127.0.0.1']
 
