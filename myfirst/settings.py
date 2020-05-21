@@ -86,12 +86,11 @@ WSGI_APPLICATION = 'myfirst.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'LABA',
-        'USER': 'postgres',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lab4',
+        'USER': 'egalievaa',
         'PASSWORD': 'ela',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': 'egalievaa.mysql.pythonanywhere-services.com',
     }
 }
 
