@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'myfirst.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lab4',
+        'NAME': 'default',
         'USER': 'egalievaa',
         'PASSWORD': 'ela',
         'HOST': 'egalievaa.mysql.pythonanywhere-services.com',
